@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicio 1</title>
+    <title>Exercicio 2</title>
     <style>
         body{
             background-color: red;
+            font-family: Arial, Helvetica, sans-serif;
         }
         h1{
             color: white;
@@ -14,14 +15,10 @@
     </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
+    <h1>Hello, World!</h1> <!-- Assim que comentamos em html.-->
     <script>
-        window.alert('Minha Primeira Mensagem')
-        /*Alerta*/
-        window.confirm('Está gostando de programar?')
-        /*Confirmação*/
-        window.prompt('qual seu nome?')
-        /*Pergunta*/
+        var nome = window.prompt('qual seu nome?')
+        window.alert('É um grande prazer te conhecer ' + nome + '!') /* Concatenação*/
     </script>
 </body>
 </html>
