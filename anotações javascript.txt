@@ -1,0 +1,119 @@
+Simbologia:
+=:Recebe
+==:igual
+
+
+
+
+Módulo:A
+
+Para aprender javascript a melhor forma é aprender já com os fundamentos do ecmascript pois é uma forma mais otimizada e aperfeiçoada da linguagem, treino e estudos são importantes, o estudo é necessário para manter o conhecimento vivo, não pule vídeos para não se perder no conteúdo.
+Podemos alterar alguns sites por meio do console usando javascript, por exemplo colocando um alerta indo no console e digitando alert('lorem') ou trocando a cor de fundo indo em console e digitando document.body.style.background = 'blue' mudando o fundo para azul.
+Podemos alterar elementos como logos ou cores, adicionar filtros ou até esconder coisas por exemplo escondendo a logo do google usando o código document.querySelector('img.lnXdpd').style.visibility = 'hidden'.
+podemos também mudar um texto de uma área usando por exemplo document.querySelector('nome do elemento a ser alterado').innerHTML = 'novo texto desejado'.
+     <script>
+        window.alert('Minha Primeira Mensagem')
+    </script>
+Acima temos um exemplo de alerta.
+        window.confirm('Está gostando de programar?')
+Acima temos um exemplo de janela de confirmação.
+        window.prompt('qual seu nome?')
+Acima temos um exemplo de janela de prompt para digitar informações.
+Por enquanto apenas recebemos os dados não armazenamos eles e nem tratamos, coisas que vamos aprender no módulo seguinte.
+
+Módulo:B
+
+Para comentários bastar usar // ou /*lorem*/
+Para entender variáveis basta imaginar elas como vagas de veículos no caso informações.
+Por exemplo:
+Vaga a1 = carro1
+a vaga a1 recebe o carro 1.
+igual num estacionamento normal para eu colocar um carro em uma vaga precisa-se tirar o carro anterior desta vaga.
+Podemos também deixar vagas vazias por exemplo:
+Vaga a1 = null
+Vaga a1 recebe nada.
+ao invés de vaga esta os criando variáveis ou seja ao inves de vaga vamos usar a palavra var de variável.
+Para cada var é necessário um indentificador ou seja um nome.
+Os dados a serem recebidos podem ser em formato de números e de letras no caso caracteres em geral.
+Podemos criar var de diversos tamanhos.
+Existem três formas de delimitar uma string sendo elas ' aspas simples ' " aspas duplas" e ´ apócrifos ` o nome de cada variável chamamos de identificadores e eles possuem regras podem começar com letras, $ ou _, não podem começar com números, podem ser usados acentos e simbolos em variáveis, não podem conter espaços mas podem ter _ e por fim não podem ser palavras reservadas por exemplo function ou alert, variáveis são case sensitives ou seja diferenciam maiúsculas das minúsculas, tente sempre definir nomes coerentes para suas variáveis.
+Números = Number
+Caracteres = String
+True Or False = Boolean
+Podemos usar typeof para descobrir o tipo de uma variável.
+
+<!-- Assim que comentamos em html.-->
+ Pomos alocar prompts em variaveis como por exemplo abaixo:
+
+        var nome = window.prompt('qual seu nome?')
+        window.alert('É um grande prazer te conhecer ' + nome)
+
+O mais nesse caso tem uma função de concatenação. Prompt sempre irá retornar os dados  no formato de string.
+para fazer o tratamento dos dados e transformá-los em numeros basta usar number por exemplo:
+
+        var n2 = Number(window.prompt('Qual seu segundo número?'))
+
+E para transformar números em strings basta usar String() ou .toString()
+
+Um exemplo de uso para isso:
+
+    <script>
+        var n1 = Number(window.prompt('Qual seu  primeiro número?'))
+
+        var n2 = Number(window.prompt('Qual seu segundo número?'))
+
+        var s = n1 + n2
+        window.alert('A soma dos números é :' + s)
+    </script>
+
+podemos fazer da seguinte forma também:
+> `Estou aprendendo ${s}`
+
+podemos também tornar isso ainda mais útil:
+
+> `O ${nome} de ${idade} ganha mensalmente o valor de ${sal}R$`   
+'O Rafael de 21 ganha mensalmente o valor de 15000R$'
+
+Podemos usar também s.length diz quantos caracteres a string tem.
+podemos usar também s.toUpperCase() para tornar tudo em maiusculas.
+podemos usar também s.toLowerCase() para tornar tudo em minúsculas.
+
+por exemplo:
+
+    <script>
+        var nome = window.prompt('Qual seu nome?')
+        document.write(`Seu nome é ${nome} e ele tem ${nome.length} letras`)
+    </script>
+
+Basta usar scripts para fazer muitas coisas por exemplo:
+
+    <script>
+        var nome = window.prompt('Qual seu nome?')
+        document.write(`Seu nome é <strong>${nome}</strong> e ele tem ${nome.length} letras<br>`)
+        document.write(`Seu nome em maiúsculas é ${nome.toUpperCase()}`)
+    </script>
+
+Podemos também ficar casas decimais em variáveis e trocar caracteres por exemplo:
+> n1.toFixed(2).replace('.',',')
+
+Podemos também usar a conversão para valores monetários por exemplo:
+> n1.toLocaleString('pt-br',{style:'currency',currency: 'BRL'})
+'R$ 1.545,50'
+
+> n1.toLocaleString('pt-br',{style: 'currency', currency: 'USD'})
+'US$ 1.545,50'
+
+> n1.toLocaleString('pt-br',{style:'currency',currency:'EUR'
+})
+'€ 1.545,50'
+
+No javascript temos vários tipos de operadores aritméticos, de atribuição, relacionais, lógicos e ternários.
+
+Para usar o tratamento de dados numéricos eles devem ser declarados no prompt como number caso contrário serão considerados strings.
+
+5+2=7
+5-2=3
+5*2=10
+5/2=2.5
+5%2=1
+5**2=25

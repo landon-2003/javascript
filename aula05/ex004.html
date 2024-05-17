@@ -19,8 +19,8 @@
         document.write(`Seu nome é <strong>${nome}</strong> e ele tem ${nome.length} letras<br>`)
         document.write(`Seu nome em maiúsculas é ${nome.toUpperCase()}<br>`)
         document.write(`Seu nome em minúsculas é ${nome.toLowerCase()}<br>`)
-        var n1 = window.prompt('Qual seu saldo?')
-        document.write(`Seu saldo é ${n1.toLocaleString('pt-br',{style: 'currency',currency: 'BRL'})}`)
+        var n1 = Number(window.prompt('Qual seu saldo?'))
+        document.write(`Seu <strong>saldo</strong> é ${n1.toLocaleString('pt-br',{style:'currency',currency:'BRL'})}`)
     </script>
 </body>
 </html>
