@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudando Condição</title>
+</head>
+<body>
+    <h1>Qual Seu Pais De Origem?</h1>
+    <input type="text" name="nac" id="inac">
+    <input type="button" value="verificar" id="botao">
+
+    <div id="res">
+
+    </div>
+    <script>
+        document.getElementById('botao').addEventListener('click', nacionalidade)
+
+        function nacionalidade() {
+            var resposta = (document.getElementById('inac').value)
+
+            if (resposta == 'Brasil' || resposta == 'brasil' || resposta == 'BRASIL' || resposta == 'br' || resposta == 'BR' || resposta == 'Br'){
+                document.getElementById('res').innerHTML = `Seu pais de origem é <strong>${resposta}</strong> então você é <strong>Brasileiro</strong>`
+            } else {
+                document.getElementById('res').innerHTML = `Seu pais de origem é <strong>${resposta}</strong> então você é <strong>Estrangeiro</strong>`
+            }
+        }
+    </script>
+</body>
+</html>
