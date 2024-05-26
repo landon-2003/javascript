@@ -3,8 +3,7 @@ window.document.getElementById('imagem')*/
 
 function carregar(){
     var data = new Date()
-    //var hora = data.getHours()
-    var hora = 13
+    var hora = data.getHours()
     window.document.getElementById('msg').innerHTML = `Agora são ${hora} horas.`
 
     if(hora >= 6 && hora < 12){
