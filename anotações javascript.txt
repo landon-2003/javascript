@@ -117,3 +117,521 @@ Para usar o tratamento de dados numéricos eles devem ser declarados no prompt c
 5/2=2.5
 5%2=1
 5**2=25
+Podemos também usar parênteses para priorizar uma equação por exemplo:
+(5+3)/2=4 
+
+Ordem de precedência:
+()
+**
+* ou / ou %
++ ou -
+
+podemos usar caso formos fazer a referência a própria equação por exemplo n+=4 ou seja n = n + 4 e assim por diante usando os demais operadores.  
+Podemos incrementar em 1 ou decrementar em 1 usando o operador de incremento por exemplo x++ ou x-- ou seja x+1 ou x-1
+5>2 maior que
+4<7 menor que
+8>=8 maior ou igual a
+7<=9 menor ou igual a
+7==7 igual a
+8!=9 diferente de
+'5' === '5' idêntico a
+5 !== '5' não é idêntico a
+! negação
+&& conjunção
+|| disjunção
+Ordem:
+aritméticos
+relacionais
+lógicos
+
+Operador Ternário
+teste?true:false
+média>=7?aprovado:reprovado 
+Por exemplo:
+
+var a = 8
+var res = a % 2 == 0 ? 7 : 9
+se 8 / 2 sobrar 0 então resultado vai receber 7 se não vai receber 9
+resultado = res = 7
+
+CTRL+SHIFT+A abre o live server.
+
+Aprendendo a usar DOM, árvore dom:
+window(a raiz de todo objeto tudo que está na sua janela está em um window)
+dentro do window temos por exemplo:
+location(qual a localização do seu site, url, página atual e página anterior etc...)
+document(Documento atual)
+history(Guarda de onde veio e para onde vai)
+dentro do document temos por exemplo o objeto HTML
+dentro de html temos dois objetos o head e o body
+quem está a baixo na árvore é child quem está acima imediatamente é parente
+os child de head são por exemplo meta, tittle e etc...
+já os child de body são por exemplo h1, div, p e etc...
+a child de p por exemplo no caso do ex006 da aula 09 é Strong.
+Podemos selecionar por tag, id, nome, classe e por seletor na árvore DOM
+Por exemplo se quisermos reproduzir o que está escrito no primeiro parágrafo podemos usar:
+
+    <script>
+        var p1 = window.document.getElementsByTagName('p')[0]
+        window.document.write(p1.innerText)
+    </script>
+
+damos a p1 o valor que está contido na tag p [0] lembrando que programação é em formato de matriz e toda matriz começa em 0, se quisermos o segundo paragrafo colocamos [1] e assim por diante, o innertext serve para dizer o texto que está contido na variável p1 e não a variável em sí.
+Podemos também adicionar um texto prévio no write e concatenar com a variável assim:
+
+    <script>
+        var p1 = window.document.getElementsByTagName('p')[0]
+        window.document.write('Está Escrito Assim: '+p1.innerText)
+    </script>
+
+Podemos também alterar um item por meio do javascript como por exemplo:
+
+        var p1 = window.document.getElementsByTagName('p')[0]
+        p1.style.color = 'blue'
+
+        var corpo = window.document.body
+        corpo.style.background = 'black'
+
+Para pegar o comando todo usamos innerhtml por exemplo:
+	getElementsByTagName('div')[0]
+        window.document.write('<br>'+d1.innerHTML)
+Assim ele pegará até as características como negrito etc...
+Podemos usar também em alertas por exemplo:
+    
+    window.alert(p1.innerText)
+
+Podemos também por exemplo pintar o fundo da div apenas:
+   
+    d1.style.background = 'red'
+
+Seja por meio da tag ou por meio do id por exemplo:
+
+	var d1 = window.document.getElementById('lorem')
+	lorem.style.background = 'green'
+
+Podemos mudar o conteúdo por meio do JS por exemplo:
+
+        d1.innerText = 'Alterando o conteúdo'
+
+Podemos também unificar fazendo por exemplo:
+
+	window.document.getElementById('lorem').innerText = 'lorem ipsun'
+
+Podemos também usar query selector por exemplo:
+
+	window.document.querySelector('lorem#id')
+			ou
+	window.document.querySelector('lorem.class')
+
+Podemos usar line-height nas css para poder centralizar verticalmente um texto.
+
+Para termos referências de eventos possíveis basta pesquisar event reference MDN.
+
+Funções
+
+Funções são feitas em blocos e são delimitados por {} e devem ser nomeados com o nome da ação(parâmetros), para usarmos devemos colocar no elemento desejado o on seguido do evento desejado por exemplo onclick por exemplo:
+
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" 	onmouseout="sair()">
+        interaja...
+    </div>
+
+    <script>
+        function clicar() {
+        window.document.getElementById('area').innerText = 'Clicou!'
+        window.document.getElementById('area').style.background = 'red'
+        }
+
+        function entrar(){
+        window.document.getElementById('area').innerText = 'Entrou!'
+        window.document.getElementById('area').style.background = 'yellow'
+        }
+
+        function sair(){
+        window.document.getElementById('area').innerText = 'Saiu!'
+        window.document.getElementById('area').style.background = 'green'
+        }
+    </script>
+
+Ou podemos limpar o html permitindo colocar eventos dentro do script usando listener da seguinte forma:
+
+    <div id="area">
+        interaja...
+    </div>
+
+    <script>
+        window.document.getElementById('area').addEventListener('click',clicar)
+
+        	window.document.getElementById('area').addEventListener('mouseenter',entr	ar)
+       
+        window.document.getElementById('area').addEventListener('mouseout',sair)
+
+        function clicar() {
+        window.document.getElementById('area').innerText = 'Clicou!'
+        window.document.getElementById('area').style.background = 'red'
+        }
+
+        function entrar(){
+        window.document.getElementById('area').innerText = 'Entrou!'
+        window.document.getElementById('area').style.background = 'yellow'
+        }
+
+        function sair(){
+        window.document.getElementById('area').innerText = 'Saiu!'
+        window.document.getElementById('area').style.background = 'green'
+        }
+    </script>
+
+Podemos detectar erros usando o devtools para localizar e corrigir.
+
+Podemos usar isso para dar uma funcionalidade melhor aos inputs por exemplo:
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números</title>
+    <style>
+        body{
+            font: normal 20px Arial;
+        }
+        input{
+            margin-bottom: 5px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando Valores</h1>
+    <input type="number" name="txt1" id="itxt1"> +
+    <input type="number" name="txt2" id="itxt2">
+    <input type="button" value="Somar" onclick="somar()">
+    <div id="res">Resultado:</div>
+    <script>
+        function somar(){
+            var tn1 = window.document.getElementById('itxt1')
+
+            var tn2 = window.document.getElementById('itxt2')
+
+            var res = window.document.getElementById('res')
+
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+
+            res.innerHTML = `A soma entre ${n1} + ${n2} = <strong>${s}</strong>`
+        }
+    </script>
+</body>
+</html>
+
+Módulo D: Condições
+
+If=se
+else= se não
+
+Usamos blocos para condições, condição simples são condições apenas com if, condição normal tem if e else. Um exemplo de condição simples:
+
+var vel = 60
+console.log(`A velocidade do seu carro é ${vel}km/h`)
+if (vel > 60) {
+    console.log(`Você ultrapassou o limite de velocidade. Multado!`)
+}
+console.log(`Dirija sempre usando cinto de segurança!`)
+
+Um exemplo de if e else:
+
+var pais = 'Brasil'
+console.log(`Vivendo em ${pais}`)
+if (pais == 'Brasil') {
+    console.log(`Você é Brasileiro!`)
+} else {
+    console.log(`você é Gringo`)
+}
+
+Podemos fazer isso no formato de site também por exemplo um exemplo de site usando o exemplo acima de multas:
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudando condições</title>
+</head>
+<body>
+    <h1>Sistema De Multas</h1>
+    Velocidade do carro:<input type="number" name="vel" id="ivel">Km/h
+    <input type="button" id="botao" value="verificar">
+
+    <div id="res">
+
+    </div>
+    <script>
+        window.document.getElementById('botao').addEventListener('click',calcular)
+
+        function calcular(){
+            var vel = Number(document.getElementById('ivel').value)
+
+            document.getElementById('res').innerHTML = `<p>Sua velocidade atual é de <strong>${vel}Km/h</strong></p>`
+            if (vel > 60) {
+                document.getElementById('res').innerHTML += `<p>isso são <strong>${vel-60}Km/h</strong> acima do limite de velocidade você está <strong>Multado!</strong></p>`
+            }
+            document.getElementById('res').innerHTML += `<p>Dirija sempre com sinto de segurança</p>`
+        }
+    </script>
+</body>
+</html>
+
+Podemos também usar o exemplo acima de nacionalidade:
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudando Condição</title>
+</head>
+<body>
+    <h1>Qual Seu Pais De Origem?</h1>
+    <input type="text" name="nac" id="inac">
+    <input type="button" value="verificar" id="botao">
+
+    <div id="res">
+
+    </div>
+    <script>
+        document.getElementById('botao').addEventListener('click', nacionalidade)
+
+        function nacionalidade() {
+            var resposta = (document.getElementById('inac').value)
+
+            if (resposta == 'Brasil' || resposta == 'brasil' || resposta == 'BRASIL' || resposta == 'br' || resposta == 'BR' || resposta == 'Br'){
+                document.getElementById('res').innerHTML = `Seu pais de origem é <strong>${resposta}</strong> então você é <strong>Brasileiro</strong>`
+            } else {
+                document.getElementById('res').innerHTML = `Seu pais de origem é <strong>${resposta}</strong> então você é <strong>Estrangeiro</strong>`
+            }
+        }
+    </script>
+</body>
+</html>
+
+Condições aninhadas:
+São condições onde temos uma dentro da outra como num ninho podemos por exemplo fazer um sistema que pegue a hora do sistema e de bom dia,boa tarde ou boa noite ao usuário. A baixo o exemplo:
+
+var agora = new Date()
+var hora = agora.getHours()
+console.log(`Agora são exatamente ${hora} horas.`)
+if (hora > 7 && hora < 12){
+    console.log(`Bom Dia!`)
+} else if(hora >= 12 && hora < 19){
+    console.log(`Boa Tarde!`)
+}else if (hora >= 19 && hora < 24){
+    console.log(`Boa Noite!`)
+}else {
+    console.log(`Boa Madrugada!`)
+}
+
+Lembrando que por estarmos rodando o programa diretamente no node estamos usando o elemento console.log para criar um site isso deve ser alterado.
+
+Condição Múltipla:
+
+Para isso usamos o switch(expressão){
+bloco relacionado
+
+case valor 1:{
+Comando
+}
+break
+
+case valor 2:{
+Comando
+}
+break
+
+case valor 3:{
+Comando
+}
+break
+
+default:{
+Comando
+}
+break
+}
+
+Break é extremamente importante ou ele rodará infinitamente até achar o break.
+
+Switch só funciona com números inteiros e strings não funciona com intervalos então caso deseje que o resultado seja tal se o número for entre 1 e 5 é muito mais indicado usar if e else. Um exemplo de um comando com switch abaixo:
+
+var agora = new Date()
+var diasem = agora.getDay()
+
+/*
+Lembrando que o JS usa sistema de matriz ou seja sempre começa em 0 sendo assim:
+
+0 = Domingo
+1 = Segunda
+2 = Terça
+3 = Quarta
+4 = Quinta
+5 = Sexta
+6 = Sábado
+
+*/
+
+switch(diasem){
+    case 0:
+         console.log(`Domingo`)
+         break
+    case 1:
+         console.log(`Segunda`)
+         break
+    case 2:
+         console.log(`Terça`)
+         break
+    case 3:
+         console.log(`Quarta`)
+         break
+    case 4:
+         console.log(`Quinta`)
+         break
+    case 5:
+         console.log(`Sexta`)
+         break
+    case 6:
+         console.log(`Sábado`)
+         break
+    default:
+         console.log(`[ERRO]Dia Inválido!`)
+         break
+}
+
+Exercício No Site:
+
+Vamos fazer um site cujo o layout é de um body dentro dele teremos um header com um título, abaixo uma section com divs tendo o conteúdo e no final um footer com um copyright.
+
+Para queexcutemos u sript n body no código devemos colocar no body o atributo onload e dentro dele devemos colocar a função desejada, podemos também fazer isso de forma externa, podemos carregar uma imagem por meio do html ou por meio do javascript, podemos colocar símbolo do copyright usando o &copy; no código, podemos colocar o nosso javascript em uma pasta externa por meio de um src assim não poluindo nosso index, quanto as css não há novidades aqui, em relação a parte de javascript temos por exemplo a declaração da varivel data e hora dentro da função para pegar esses dados do sistema do dispositivo, podemos fazer isso por meio dos:
+
+    var data = new Date()
+    var hora = data.getHours()
+
+Também temos um código que irá adicionar uum texto na div ensagem dizendo as horas e sendo atualizado por meio da variável:
+
+    window.document.getElementById('msg').innerHTML = `Agora são ${hora} horas.`
+
+Lembrando que sempre deve ser usada a `` para podermos declarar variáveis dentro do texto, podemos também usar '' e "" porém não poderemos usar ${} para declarar variáveis.
+
+Abaixo usamos condições compostas, usando if, else if e else colocando condições referentes ao horário e também colocando um bacground e imagem personalizada para cada fase do dia:
+
+    if(hora >= 6 && hora < 12){
+        window.document.getElementById('imagem').src = 'imagens/manha.png'
+        document.body.style.background = '#468bce'
+    }else if(hora >=12 && hora <19){
+        window.document.getElementById('imagem').src = 'imagens/tarde.png'
+        document.body.style.background = '#fa8b54' 
+    }else if (hora >=19 && hora <24){
+        window.document.getElementById('imagem').src = 'imagens/noite.png'
+        document.body.style.background = '#3d1146'
+    }else{
+        window.document.getElementById('imagem').src = 'imagens/madrugada.png'
+        document.body.style.background = '#1d2a3c'
+    }
+
+Agora para o ex015:
+
+Aqui usamos um input do tipo radio lembrando que eles devem ter ids diferentes mas sempre o mesmo name caso contrário será permitido marcar mais de um deles ao mesmo tempo e não é o que desejamos, também é útil lembrar que podemos usar o elemento checked para deixar um deles pré selecionado ao um usuário abrir o site, criamos um input button verificar e também uma div resultado aonde será dado o resultado do script, aqui na parte das css temos um código no img que vai ser criado no javascript para impedir que a imagem seja descentralizada, infelizmente esse erro está acontecendo devido a forma que eu redimensionei as fotos selecionadas, aqui na parte de javascript coloquei um eventlistener para limpar o código html:
+
+document.getElementById('ver').addEventListener('click', verificar)
+
+Em seguida colocamos uma função verificar() nela novamente pegamos a data do sistema porém agora para usarmos o ano completo, ele será usado para descobrirmos a idade dos usuários fazendo a subtração do ano atual pelo ano digitado pelo usuário, em seguida declaramos a variável res para depois facilitar o uso daquela div res:
+
+    var data = new Date()
+    var ano = data.getFullYear()
+    var res = document.getElementById('res')
+
+Logo após isso colocamos mais uma condição composta e dentro dela colocamos uma conjunção formada de else if também, o if está sendo usado para uma mensagem de erro, já a parte utilizável do código está abaixo com a inclusão do img, uma variável vazia de gênero e a declaração de uma variável de sexo:
+
+if(document.getElementById('iano').value.length == 0 || document.getElementById('iano').value > ano){
+        window.alert('[Erro] Verifique os dados digitados e tente novamente!')
+    }else{
+        var fsex = document.getElementsByName('radsex')
+        var idade = ano - Number(document.getElementById('iano').value)
+        var gênero = ''
+        var img = document.createElement('img')
+        img.setAttribute('id','foto')
+        if (fsex[0].checked){
+            gênero = 'Homem'
+            if (idade >=0 && idade <=3){
+                //bebê
+                img.setAttribute('src','imagens/bebem.png')
+            }else if (idade >=4 && idade <=10){
+                //criança
+                img.setAttribute('src','imagens/criançam.png')
+            }else if (idade >=11 && idade <=17){
+                //adolescente
+                img.setAttribute('src','imagens/adolescentem.png')
+            }else if (idade >=18 && idade <= 25){
+                //jovem
+                img.setAttribute('src','imagens/jovemm.png')
+            }else if(idade >=26 && idade <=40){
+                //homem
+                img.setAttribute('src','imagens/homem.png')
+            }else if(idade >=41 && idade <=55){
+                //maduro
+                img.setAttribute('src','imagens/madurom.png')
+            }else{
+                //idoso
+                img.setAttribute('src','imagens/idoso.png')
+            }
+        } else{
+            gênero = 'Mulher'
+            if (idade >=0 && idade <=3){
+                //bebê
+                img.setAttribute('src','imagens/bebef.png')
+            }else if (idade >=4 && idade <=10){
+                //criança
+                img.setAttribute('src','imagens/criançaf.png')
+            }else if (idade >=11 && idade <=17){
+                //adolescente
+                img.setAttribute('src','imagens/adolescentef.png')
+            }else if (idade >=18 && idade <= 25){
+                //jovem
+                img.setAttribute('src','imagens/jovemf.png')
+            }else if(idade >=26 && idade <=40){
+                //Mulher
+                img.setAttribute('src','imagens/mulher.png')
+            }else if(idade >=41 && idade <=55){
+                //madura
+                img.setAttribute('src','imagens/maduraf.png')
+            }else{
+                //idosa
+                img.setAttribute('src','imagens/idosa.png')
+            }
+
+Logo após isso colocamos a finalização de nosso projeto colocando o text align, a injeção de um innerhtml na div res, e finalmente um appendchild(adição de filho) e declarando que esse filho seria o img:
+
+        res.style.textAlign = 'center'
+        res.innerHTML = `Detectamos ${gênero} com ${idade} anos.`
+        res.appendChild(img)
+
+Lembrete:
+.value (valor digitado em um input)
+.checked (valor selecionado por um input radio)
+Os modelos acima são divididos entre homem e mulher.
+Assim finalizamos essa parte de exercícios da aula 12 agora partindo para a aula 13.
+
+Módulo E:
+
+Aqui iniciamos o módulo E que falará sobre repetições em javascript
+
+Iremos aprender as estruturas de repetição a seguir:
+
+repetição com teste no inicio:
+While
+
+repetição com teste no final:
+do while
+
+repetição com controle:
+for
+
