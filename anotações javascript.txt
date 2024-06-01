@@ -1,7 +1,26 @@
 Simbologia:
 =:Recebe
 ==:igual
-
+===:idêntico
+>:maior
+<:menor
+>=:maior ou igual
+<=:menor ou igual
++:adição
+-:subtração 
+*:multiplicação 
+/:divisão
+%:resto da divisão 
+&:Conjunção
+||:Ou
+`${}`:chamando uma variável
+{}:abrindo bloco
+if:se
+else:se não
+else if:a ser usado depois de um if e antes de um else
+switch:entre as alternativas
+case:caso
+break:quebrar
 
 
 
@@ -634,4 +653,41 @@ do while
 
 repetição com controle:
 for
+
+Um exemplo de uso desta forma é caso queiramos escrever tudo bem 6 vezes podemos usar copia e cola ou podemos de forma mais inteligente usar laços como a seguir:
+
+var c = 1
+while(c <= 6){
+    console.log('Tudo bem?')
+    c++
+}
+
+
+/*
+console.log('tudo bem?')
+console.log('tudo bem?')
+console.log('tudo bem?')
+console.log('tudo bem?')
+console.log('tudo bem?')
+console.log('tudo bem?')
+*/
+
+var c = 1
+do{
+    console.log(`Tudo bem?${c}`)
+    c++
+}while(c <= 6)
+
+A estrutura while é a mais usada mas sempre é bom pesquisar a mais apropriada para cada situação
+
+Aula 14: For
+for(início;teste lógico;incremento){
+
+}
+
+for(var c=1;c<=10;c++){
+console.log(`tudo bem?${c}`)
+}
+
+Modo de depuração facilita muito para acharmos os erros de nossos códigos.
 
