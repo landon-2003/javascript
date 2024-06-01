@@ -279,7 +279,7 @@ Ou podemos limpar o html permitindo colocar eventos dentro do script usando list
 
     <script>
         window.document.getElementById('area').addEventListener('click',clicar)
-
+ 
         	window.document.getElementById('area').addEventListener('mouseenter',entr	ar)
        
         window.document.getElementById('area').addEventListener('mouseout',sair)
@@ -691,3 +691,86 @@ console.log(`tudo bem?${c}`)
 
 Modo de depuração facilita muito para acharmos os erros de nossos códigos.
 
+Como usar emojis em javascript:
+
+innerHTML = `\u{1F449}`
+
+resolvendo ex 16 de js:
+
+document.getElementById('botao').addEventListener('click', contagem) // usado para adicionar um evento sem precisar mexer no html
+
+function contagem() {
+    //declarando variáveis abaixo em formato de string 👇 
+
+    var ini = document.getElementById('iinic') 
+    var fim = document.getElementById('ifim')
+    var passo = document.getElementById('ipasso')
+    var res = document.getElementById('res')
+
+    //Abaixo temos um if que dará um aviso caso os inputs estejam vazios 👇 
+
+    if(ini.value.length == 0 || fim.value.length == 0 || passo.value.length == 0){
+   //abaixo temos um innerhtml que recebe texto e um alert de valor inválido  👇 
+
+        res.innerHTML = 'Impossível contar!'
+        window.alert('Valor inválido, impossível contar!')
+    }else{
+ //abaixo temos outro inner e também a conversão de algumas variáveis para num
+        res.innerHTML = `Contando:<br>`
+        var i = Number(ini.value)
+        var f = Number(fim.value)
+        var p = Number(passo.value)
+        
+//abaixo temos um if que caso o valor do passo seja 0 transformará ele em 1
+
+        if(p <= 0){
+            alert('Passo inválido, considerando passo 1')
+            p = 1
+        }
+        if(i < f){
+        //contagem crescente usando for
+            for(var c = i; c <= f; c += p){
+	//abaixo temos um inner que a cada loop adiciona mais um texto dizendo o valor atual do contador e adicionando mais um emoji 👇 
+            res.innerHTML += ` ${c} \u{1F449}`
+        }
+        }else{
+        //contagem regressiva usando for, criamos uma var c para ser contador
+            for(var c = i; c >= f; c -= p){
+            res.innerHTML += ` ${c} \u{1F449}`
+        }
+        }
+        res.innerHTML += `\u{1f3c1}`
+    }
+}
+
+resolvendo o ex 17 de js:
+
+document.getElementById('botao').addEventListener('click', contagem)
+
+function contagem(){
+    var num = document.getElementById('inum')
+//abaixo declaramos uma variável para o select 👇 
+    var tab = document.getElementById('itabu')
+
+    if(num.value.length == 0){
+        alert('Impossível contar! Digite um valor válido.')
+    }else{
+        var n = Number(num.value)
+        var c = 1
+//abaixo temos um inner que recebe nenhum valor para limpar o contador a cada envio
+        tab.innerHTML = ''
+//enquanto c for menor ou igual a 10 executará o código dentro
+        while(c <= 10){
+//abaixo criamos uma variável e ela recebe a criação de um elemento option 
+        var item = document.createElement('option')
+//adicionamos um texto ao item criado acima
+        item.text = `${n} X ${c} = ${n*c}`
+//adicionamos um valor ao option criado sendo ele tab e o valor será do contador atual
+        item.value = `tab${c}`
+//adicionamos um filho no select sendo ele o item criado acima
+        tab.appendChild(item)
+//abaixo temos o incremento
+        c++
+        }
+    }
+}
